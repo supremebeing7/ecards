@@ -4,7 +4,9 @@
 
 <ul>
   <% @cards.each do |card| %>
-    <li><a href="/cards/<%= card.slug %>"><%= card.name %></a></li>
+    <li><%= image_tag card.card_image.url(:thumb) %>
+      <br /><a href="/cards/<%= card.slug %>"><%= card.name %></a>
+      </li>
   <% end %>
 </ul>
 

@@ -14,7 +14,7 @@ class CardsController < ApplicationController
     if @card.save
       params[:card][:slug] = ("#{@card.id}-#{@card.name}").parameterize
       @card.update(params[:card])
-      redirect_to("/cards/#{@card.slug}")
+      redirect_to("/cards")
     else
       render('cards/new.html.erb')
     end
@@ -44,4 +44,10 @@ class CardsController < ApplicationController
     @card.destroy
     render('cards/destroy.html.erb')
   end
+
+  # private
+
+  # def user_params
+  #   params.require(:card).permit(:card_image, :name, :slug)
+  # end
 end

@@ -1,3 +1,10 @@
-<label for="card_name">Name</label>
-<input id="card_name" name="card[name]" type="text" value="<%= @card.name %>">
-<!-- <input IMAGE > -->
+<%= form_for @card, :url => "/cards", :html => { :multipart => true } do |form| %>
+
+  <%= form.label "Name" %>
+  <%= form.text_field :name %>
+
+
+  <%= form.file_field :card_image %>
+
+  <%= form.submit 'Add Image' %>
+<% end %>
