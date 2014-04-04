@@ -21,28 +21,28 @@ class CardsController < ApplicationController
   end
 
   def show
-    @card = Card.find_by(slug: params[:slug])
+    @card = Card.find_by(slug: params[:id])
     render('cards/show.html.erb')
   end
 
   def edit
-    @card = Card.find_by(slug: params[:slug])
+    @card = Card.find_by(slug: params[:id])
     render('cards/edit.html.erb')
   end
 
   def update
-    @card = Card.find_by(slug: params[:slug])
+    @card = Card.find(params[:id])
     if @card.update(params[:card])
-      render('cards/success.html.erb')
+      redirect_to "/cards"
     else
       render('cards/edit.html.erb')
     end
   end
 
   def destroy
-    @card = Card.find_by(slug: params[:slug])
+    @card = Card.find_by(slug: params[:id])
     @card.destroy
-    render('cards/destroy.html.erb')
+    redirect_to "/cards"
   end
 
   private

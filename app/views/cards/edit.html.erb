@@ -1,0 +1,6 @@
+<% content_for(:title, "#{@card.name} | Edit menu") %>
+
+<h1>Edit Menu </h1>
+
+<%= render('layouts/errors', object: @card) %>
+  <%= render('form') %>

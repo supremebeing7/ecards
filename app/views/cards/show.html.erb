@@ -4,5 +4,11 @@
 
 <%= image_tag @card.card_image.url %>
 
+<a href="/cards/<%= @card.slug %>"
+   data-confirm="Delete Card?"
+   data-method="delete"
+   rel="nofollow"><button class="btn btn-danger">Delete Card</button></a>
+
+<a href="/cards/<%= @card.slug %>/edit"><button class='btn btn-caution'>Edit Card</button></a>
 
 <a href="/cards"><button class='btn btn-primary'>Return to Main Menu</button></a>
