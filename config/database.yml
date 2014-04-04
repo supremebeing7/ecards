@@ -5,3 +5,7 @@ development:
 test:
   adapter: postgresql
   database: ecard_test
+
+production:
+  adapter: postgresql
+  database: ecard_production
