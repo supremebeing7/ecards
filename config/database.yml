@@ -1,0 +1,7 @@
+development:
+  adapter: postgresql
+  database: ecard_development
+
+test:
+  adapter: postgresql
+  database: ecard_test

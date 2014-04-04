@@ -1,0 +1,12 @@
+<% content_for(:title, "All Cards | eCards") %>
+
+<h1>Cards</h1>
+
+<ul>
+  <% @cards.each do |card| %>
+    <li><a href="/cards/<%= card.slug %>"><%= card.name %></a></li>
+  <% end %>
+</ul>
+
+
+<p><a href="/cards/new">Add a new card</a></p>
