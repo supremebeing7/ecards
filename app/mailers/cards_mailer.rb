@@ -6,3 +6,7 @@ class CardsMailer < ActionMailer::Base
     @url = '/cards'
   end
 end
+
+
+# PLACED IN _form.html, after <%= form_for @card,
+# :url => "/cards",

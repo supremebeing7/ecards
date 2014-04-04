@@ -10,7 +10,7 @@ class CardsController < ApplicationController
   end
 
   def create
-    @card = Card.new(params[:card])
+    @card = Card.new(card_params)
     if @card.save
       params[:card][:slug] = ("#{@card.id}-#{@card.name}").parameterize
       @card.update(params[:card])
@@ -45,9 +45,9 @@ class CardsController < ApplicationController
     render('cards/destroy.html.erb')
   end
 
-  # private
+  private
 
-  # def user_params
-  #   params.require(:card).permit(:card_image, :name, :slug)
-  # end
+  def card_params
+    params.require(:card).permit(:card_image, :name, :slug)
+  end
 end

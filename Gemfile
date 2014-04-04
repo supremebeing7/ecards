@@ -11,6 +11,7 @@ gem 'bootstrap-sass'
 gem 'paperclip'
 gem 'pry'
 gem 'aws-sdk'
+gem 'aws-s3'
 
 group :development do
   gem 'better_errors'
