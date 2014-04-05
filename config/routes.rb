@@ -9,6 +9,6 @@ Ecard::Application.routes.draw do
   # match('cards/:slug/edit', {:via => :get, :to => 'cards#edit'})
   # match('cards/:slug', {:via => [:patch, :put], :to => 'cards#update'})
   # match('cards/:slug', {:via => :delete, :to => 'cards#destroy'})
-  match('mailouts', {:via => :post, :to => 'mailouts#create'})
+  # match('mailouts', {:via => :post, :to => 'mailouts#create'})
 
 end

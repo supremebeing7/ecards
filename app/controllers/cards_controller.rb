@@ -1,12 +1,10 @@
 class CardsController < ApplicationController
   def index
     @cards = Card.all
-    render('cards/index.html.erb')
   end
 
   def new
     @card = Card.new
-    render('cards/new.html.erb')
   end
 
   def create
@@ -22,12 +20,10 @@ class CardsController < ApplicationController
 
   def show
     @card = Card.find_by(slug: params[:id])
-    render('cards/show.html.erb')
   end
 
   def edit
     @card = Card.find_by(slug: params[:id])
-    render('cards/edit.html.erb')
   end
 
   def update

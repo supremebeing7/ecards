@@ -1,6 +1,6 @@
-<% content_for(:title, "#{@card.name} | Edit menu") %>
+<% content_for(:title, "Edit #{@card.name} | Ecards") %>
 
 <h1>Edit Menu </h1>
 
 <%= render('layouts/errors', object: @card) %>
-  <%= render('form') %>
+<%= render('form') %>

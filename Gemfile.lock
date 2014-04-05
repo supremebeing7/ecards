@@ -160,7 +160,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  actionmailer
   aws-s3
   aws-sdk
   better_errors

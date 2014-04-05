@@ -1,11 +1,13 @@
 <%= form_for @card, :html => { :multipart => true } do |form| %>
+  <div class="form-group">
+    <%= form.label "Name" %>
+    <%= form.text_field :name %>
+  </div>
 
-  <%= form.label "Name" %>
-  <%= form.text_field :name %>
+  <div class="form-group">
+    <%= form.file_field :card_image %>
+  </div>
 
-
-  <%= form.file_field :card_image %>
-
-    <%= form.submit 'Add Image', class: 'btn btn-danger' %>
+  <%= form.submit class: 'btn btn-danger' %>
 
 <% end %>

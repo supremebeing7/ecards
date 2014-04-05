@@ -12,7 +12,7 @@ gem 'paperclip'
 gem 'pry'
 gem 'aws-sdk'
 gem 'aws-s3'
-gem 'actionmailer'
+# gem 'actionmailer'
 
 group :development do
   gem 'better_errors'
