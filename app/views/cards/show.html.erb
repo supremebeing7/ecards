@@ -4,6 +4,20 @@
 
 <%= image_tag @card.card_image.url %>
 
+<!-- <a href="/cards"><button class='btn btn-primary'>Email Card</button></a> -->
+<form action="/mailouts" method="post">
+  <input name="card_id" type="hidden" value="<%=  @card.id %>">
+  <input name="mailout[your_name]" type="text" placeholder="Your Name">
+  <input name="mailout[friend_name]" type="text" placeholder="Friend's Name">
+  <input name="mailout[email]" type="text" placeholder="Friend's Email">
+  <input type="hidden" value="http://epicodus-ecards.herokuapp.com/cards/<%= @card.slug %>">
+  <button class="btn btn-success">Send Card</button>
+</form>
+
+<br/>
+
+
+
 <a href="/cards/<%= @card.slug %>"
    data-confirm="Delete Card?"
    data-method="delete"

@@ -1,4 +1,4 @@
-As an admin, I want to upload photos so that users can send them
+-Done- As an admin, I want to upload photos so that users can send them
 
 As a user, I want to be able to send photos by email so that my friends can enjoy them
 
