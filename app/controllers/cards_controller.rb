@@ -12,9 +12,10 @@ class CardsController < ApplicationController
     if @card.save
       params[:card][:slug] = ("#{@card.id}-#{@card.name}").parameterize
       @card.update(params[:card])
-      redirect_to("/cards")
+      flash[:notice] = "Card added."
+      redirect_to cards_path
     else
-      render('cards/new.html.erb')
+      render 'new'
     end
   end
 
@@ -29,16 +30,18 @@ class CardsController < ApplicationController
   def update
     @card = Card.find(params[:id])
     if @card.update(params[:card])
-      redirect_to "/cards"
+      flash[:notice] = "Card updated."
+      redirect_to card_path(@card.slug)
     else
-      render('cards/edit.html.erb')
+      render 'edit'
     end
   end
 
   def destroy
     @card = Card.find_by(slug: params[:id])
     @card.destroy
-    redirect_to "/cards"
+    flash[:notice] = "Card deleted."
+    redirect_to cards_path
   end
 
   private

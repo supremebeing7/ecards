@@ -1,5 +1,5 @@
 Ecard::Application.routes.draw do
-  match('/', {:via => :get, :to => 'cards#index'})
+  root to: 'cards#index'
 
   resources :cards
   # match('cards', {:via => :get, :to => 'cards#index'})
@@ -12,3 +12,6 @@ Ecard::Application.routes.draw do
   # match('mailouts', {:via => :post, :to => 'mailouts#create'})
 
 end
+
+
+# <%= link_to (image_tag(card.card_image.url(:medium), title: card.name)), card_path(card.slug), data: { gallery: "" } %>

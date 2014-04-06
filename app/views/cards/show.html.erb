@@ -1,28 +1,26 @@
-<% content_for(:title, "#{@card.name} | Ecards") %>
+<% content_for(:title, "#{@card.name} | Misusing eCards") %>
 
 <h1> <%= @card.name %> </h1>
 
 <%= image_tag @card.card_image.url %>
 
-<!-- <a href="/cards"><button class='btn btn-primary'>Email Card</button></a> -->
-<form action="/mailouts" method="post">
+<!-- CODE TO ADD SEND BY EMAIL FUNCTIONALITY (NON_WORKING) -->
+<!-- <form action="/mailouts" method="post">
   <input name="card_id" type="hidden" value="<%=  @card.id %>">
   <input name="mailout[your_name]" type="text" placeholder="Your Name">
   <input name="mailout[friend_name]" type="text" placeholder="Friend's Name">
   <input name="mailout[email]" type="text" placeholder="Friend's Email">
   <input type="hidden" value="http://epicodus-ecards.herokuapp.com/cards/<%= @card.slug %>">
   <button class="btn btn-success">Send Card</button>
-</form>
+</form> -->
 
 <br/>
 
+<%= link_to "Delete", card_path(@card.slug),
+                            confirm: "Are you sure?",
+                            method: "delete",
+                            class: "btn btn-danger" %>
 
+<%= link_to "Edit", edit_card_path(@card.slug), class: "btn btn-primary" %>
 
-<a href="/cards/<%= @card.slug %>"
-   data-confirm="Delete Card?"
-   data-method="delete"
-   rel="nofollow"><button class="btn btn-danger">Delete Card</button></a>
-
-<a href="/cards/<%= @card.slug %>/edit"><button class='btn btn-caution'>Edit Card</button></a>
-
-<a href="/cards"><button class='btn btn-primary'>Return to Main Menu</button></a>
+<%= link_to "Home", root_path, class: "btn btn-primary" %>
