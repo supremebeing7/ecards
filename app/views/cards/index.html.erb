@@ -2,13 +2,13 @@
 
 <h1>Misusing eCards</h1>
 
-<ul>
+<h3>Impress your friends! Charm your loved ones!</h3>
+
+<dl>
   <% @cards.each_with_index do |card, index| %>
-    <li><%= image_tag card.card_image.url(:medium) %>
-      <br /><a href="/cards/<%= card.slug %>"><%= card.name %></a>
-      </li>
+    <dt><a href="/cards/<%= card.slug %>"><%= image_tag card.card_image.url(:medium) %></a></dt>
   <% end %>
-</ul>
+</dl>
 
 
 <p><a href="/cards/new"><button class='btn btn-danger'>Add a new card</button></a></p>
