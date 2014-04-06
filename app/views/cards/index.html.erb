@@ -3,8 +3,8 @@
 <h1>Misusing eCards</h1>
 
 <ul>
-  <% @cards.each do |card| %>
-    <li><%= image_tag card.card_image.url(:thumb) %>
+  <% @cards.each_with_index do |card, index| %>
+    <li><%= image_tag card.card_image.url(:medium) %>
       <br /><a href="/cards/<%= card.slug %>"><%= card.name %></a>
       </li>
   <% end %>
